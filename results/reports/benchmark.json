@@ -1,0 +1,16 @@
+[
+    {
+        "file": "test.png",
+        "engine": "tesseract",
+        "cer": 0.0,
+        "wer": 0.0,
+        "time": 1.1735687255859375
+    },
+    {
+        "file": "test.png",
+        "engine": "easyocr",
+        "cer": 0.0,
+        "wer": 0.0,
+        "time": 0.6378805637359619
+    }
+]
