@@ -15,6 +15,7 @@ Given a dataset of images and ground-truth text, the framework:
 - Computes Word Error Rate (WER)
 - Measures inference time
 - Exports results as CSV and JSON reports
+- Generates benchmark plots for visual comparison
 
 The goal is not just OCR — but structured benchmarking.
 
@@ -22,10 +23,11 @@ The goal is not just OCR — but structured benchmarking.
 
 ## Why This Exists
 
-Most OCR demos stop at:
+Most OCR demos stop at:  
 "Here is the extracted text."
 
 This project asks:
+
 - How accurate is the engine?
 - How does it perform across different languages?
 - Which engine is faster?
@@ -41,7 +43,7 @@ Install dependencies:
 
 pip install -r requirements.txt
 
-Note:
+Note:  
 Tesseract must be installed separately and available in your system PATH.
 
 ---
@@ -55,6 +57,10 @@ python cli.py --lang eng --dataset datasets/eng
 Results are saved in:
 
 results/reports/
+
+Generated plots are saved in:
+
+results/plots/
 
 ---
 
@@ -86,7 +92,8 @@ This project is intentionally backend-heavy and evaluation-focused rather than U
 - Summary statistics per engine
 - Visualization dashboard
 - Docker support
-- Additional OCR engine integrations
+- Integration of additional **open-source OCR models**
+- OCR → Translation pipeline for cross-language document understanding
 
 ---
 
