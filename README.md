@@ -72,6 +72,38 @@ Additional open source OCR models can be integrated easily using the engine abst
 
 ---
 
+## Datasets
+
+This project is designed to work with multilingual OCR datasets. Some publicly available datasets you can use include:
+
+**English**
+- ICDAR 2013 / ICDAR 2015 Scene Text datasets  
+- IIIT5K Word Dataset
+
+**Chinese**
+- RCTW-17 (Reading Chinese Text in the Wild)
+
+**Arabic**
+- ALIF Arabic Scene Text Dataset
+
+**Hindi / Devanagari**
+- IIIT-HW Devnagari Handwritten Dataset
+
+**Multilingual**
+- MLT (ICDAR Multi-Lingual Text Dataset)
+
+These datasets contain labeled text images that can be used as input for benchmarking OCR engines.
+
+Dataset folders should follow this structure:
+
+datasets/<lang>/
+    images/
+    ground_truth/
+
+Each image should have a corresponding `.txt` file with the same name containing the ground truth text.
+
+---
+
 ## Project Focus
 
 - Modular OCR engine interface
@@ -94,3 +126,4 @@ Additional open source OCR models can be integrated easily using the engine abst
 ---
 
 Built as a project exploring OCR evaluation and benchmarking pipelines.
+
