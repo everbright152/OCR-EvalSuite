@@ -1,39 +1,27 @@
 # PolyOCR-Bench
 
-PolyOCR-Bench is a modular multilingual OCR benchmarking framework built to compare OCR engines across different languages and scripts.
+PolyOCR-Bench is a multilingual OCR benchmarking framework for comparing different OCR engines across languages and scripts.
 
-Instead of just extracting text, this project focuses on evaluation — measuring accuracy and performance across engines like Tesseract and EasyOCR using standard metrics.
+The current implementation compares:
+
+- Tesseract OCR
+- EasyOCR
+
+The goal is to evaluate OCR systems using standard metrics instead of just extracting text.
 
 ---
 
 ## What This Does
 
-Given a dataset of images and ground-truth text, the framework:
+Given a dataset of images and ground truth text, the framework:
 
 - Runs multiple OCR engines
 - Computes Character Error Rate (CER)
 - Computes Word Error Rate (WER)
 - Measures inference time
-- Exports results as CSV and JSON reports
-- Generates benchmark plots for visual comparison
-
-The goal is not just OCR — but structured benchmarking.
-
----
-
-## Why This Exists
-
-Most OCR demos stop at:  
-"Here is the extracted text."
-
-This project asks:
-
-- How accurate is the engine?
-- How does it perform across different languages?
-- Which engine is faster?
-- How does preprocessing affect results?
-
-It is designed as a systems + evaluation oriented project.
+- Saves predicted text and ground truth
+- Exports results as CSV and JSON
+- Generates comparison plots
 
 ---
 
@@ -43,7 +31,6 @@ Install dependencies:
 
 pip install -r requirements.txt
 
-Note:  
 Tesseract must be installed separately and available in your system PATH.
 
 ---
@@ -58,7 +45,7 @@ Results are saved in:
 
 results/reports/
 
-Generated plots are saved in:
+Plots are saved in:
 
 results/plots/
 
@@ -70,31 +57,40 @@ CER (Character Error Rate)
 WER (Word Error Rate)  
 Inference time per engine  
 
-Lower error = better accuracy.
+Lower error means better accuracy.
+
+---
+
+## Current OCR Engines
+
+The framework currently benchmarks:
+
+- Tesseract OCR
+- EasyOCR
+
+Additional open source OCR models can be integrated easily using the engine abstraction layer.
 
 ---
 
 ## Project Focus
 
-- Modular engine abstraction
-- Multilingual-ready structure
-- Extensible benchmarking pipeline
-- Evaluation-first design
-
-This project is intentionally backend-heavy and evaluation-focused rather than UI-driven.
+- Modular OCR engine interface
+- Multilingual benchmarking structure
+- Evaluation pipeline for OCR systems
+- Automated result reporting
 
 ---
 
 ## Future Improvements
 
-- Engine selection via CLI
+- Engine selection through CLI
 - Automatic language mapping
 - Summary statistics per engine
 - Visualization dashboard
 - Docker support
-- Integration of additional **open-source OCR models**
-- OCR → Translation pipeline for cross-language document understanding
+- Integration of additional open source OCR models
+- OCR to translation pipeline for multilingual document understanding
 
 ---
 
-Built as a systems-oriented project exploring multilingual OCR benchmarking and evaluation pipelines.
+Built as a project exploring OCR evaluation and benchmarking pipelines.
