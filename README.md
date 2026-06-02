@@ -1,8 +1,24 @@
 # PolyOCR-Bench
 
-PolyOCR-Bench is a multilingual OCR benchmarking framework for comparing different OCR engines, both traditional and transformer-based across languages, scripts, and document conditions.
+PolyOCR-Bench is a multilingual OCR benchmarking and evaluation framework designed to compare traditional OCR engines and transformer-based document recognition models across different languages, scripts, image qualities, and document conditions.
 
-The framework supports evaluating multiple models out-of-the-box and generates unified CSV/JSON reports alongside performance and accuracy comparison plots.
+The goal of this project is to support OCR/HTR cascade tuning for real-world document intelligence pipelines. Given a dataset of document images and ground-truth text, PolyOCR-Bench evaluates multiple OCR engines, measures accuracy and performance, tests robustness under degraded document conditions, and exports unified reports for model comparison.
+
+This framework is especially useful for teams building document-AI systems where OCR quality directly affects downstream search, retrieval, citations, structured extraction, and knowledge infrastructure.
+
+## Project Purpose
+
+Real-world OCR is rarely solved by a single model. Different engines perform better depending on language, script, handwriting quality, scan resolution, noise, layout, and document type.
+
+PolyOCR-Bench helps answer questions such as:
+
+Which OCR engine performs best for a specific language or script?
+Which model is most robust under noisy, blurred, rotated, or compressed images?
+Which OCR engine offers the best accuracy vs. speed tradeoff?
+How much does performance degrade under real-world document corruption?
+Which OCR engine should be used as the first step, fallback, or specialty model in an OCR/HTR cascade?
+
+---
 
 ## Supported Engines
 
@@ -31,6 +47,45 @@ Given a dataset of images and ground truth text, the framework:
 - Generates automatic comparison plots (e.g., Accuracy vs. Speed, Robustness degradation curves, Metric comparisons).
 
 ---
+
+## Evaluation Metrics
+
+**Text Accuracy Metrics**
+- Character Error Rate, CER
+- Word Error Rate, WER
+- Exact Match Accuracy
+- Levenshtein Distance
+- Token Accuracy
+**Semantic Similarity Metrics**
+- BLEU Score
+- ROUGE Score
+**Performance Metrics**
+- Inference time per image
+- Average processing time per engine
+- Memory RSS usage
+- Accuracy vs. speed comparison
+**Robustness Metrics**
+
+The framework can test OCR engines under synthetic document degradations including:
+
+- Gaussian noise
+- Blur
+- Rotation
+- JPEG compression
+- Low-resolution scaling
+
+These robustness tests are useful for simulating messy real-world material such as scanned archives, damaged documents, low-quality images, and historical records.
+
+## Key Features
+- Multilingual OCR benchmarking across languages and scripts
+- Support for traditional and transformer-based OCR engines
+- Modular engine interface for easy extension
+- Accuracy, semantic, speed, and memory evaluation
+- Robustness testing under degraded image conditions
+- Unified CSV and JSON benchmark outputs
+- Automatic visualization of model performance
+- Useful foundation for OCR/HTR cascade tuning
+- Designed for document-AI and ingestion pipeline workflows
 
 ## Installation
 
